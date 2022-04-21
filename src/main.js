@@ -2,5 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import 'normalize.css/normalize.css'
+import '@/style/index.scss'
+import Mui from '@/components'
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(store).use(router).use(Mui).mount('#app')
