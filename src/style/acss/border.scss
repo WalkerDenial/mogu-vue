@@ -27,7 +27,7 @@
 -------------------------- */
 @for $i from 1 through 10 {
     [radius#{$i}] { 
-        border-radius: #{$i}Px;
+        border-radius: #{$i}Px; /* P 大写表示不会转换成 rem */
         overflow: hidden;
     }
 }

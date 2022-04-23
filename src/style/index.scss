@@ -1,10 +1,13 @@
-@import "./base/article.scss";
-@import "./base/images.scss";
-@import "./base/link.scss";
-@import "./base/page.scss";
+@import "./elements/article.scss";
+@import "./elements/images.scss";
+@import "./elements/link.scss";
+@import "./elements/page.scss";
 
 @import "./acss/border.scss";
 @import "./acss/color.scss";
+@import "./acss/ellipsis.scss";
+@import "./acss/font-size.scss";
+@import "./acss/white-space.scss";
 @import "./acss/z-index.scss";
 
 // @import "./theme/cool.scss";
