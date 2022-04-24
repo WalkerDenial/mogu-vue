@@ -1,3 +1,3 @@
-import SingleCenter from './single-center.vue';
+import SingleCenter from "./single-center.vue";
 
 export default SingleCenter;

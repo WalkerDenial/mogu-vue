@@ -1,16 +1,16 @@
 <template>
-    <main class="c-main">
-        <slot></slot>
-    </main>
+  <main class="c-main">
+    <slot></slot>
+  </main>
 </template>
 <script>
 export default {
-    name: 'CMain'
-}
+  name: "CMain",
+};
 </script>
 <style lang="scss" scoped>
 @include b(c-main) {
-    overflow: auto;
-    flex: 1;
+  overflow: auto;
+  flex: 1;
 }
 </style>

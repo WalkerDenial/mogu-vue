@@ -23,20 +23,20 @@
 /// @param {Color} $color - the color to be used as background + gradient
 /// @param {String} $position ['top'] - either `top` or `bottom`
 /// @param {String} $pseudo ['before'] - either `before` or `after`
-@mixin tilted($angle, $color, $position: 'top', $pseudo: 'before') {
+@mixin tilted($angle, $color, $position: "top", $pseudo: "before") {
   $height: get-tilted-height($angle);
 
   position: relative;
   background-color: $color;
 
   &::#{$pseudo} {
-    content: '';
+    content: "";
     padding-top: $height;
     position: absolute;
     left: 0;
     right: 0;
 
-    @if ($position == 'top') {
+    @if ($position == "top") {
       bottom: 100%;
       background-image: linear-gradient($angle, $color 50%, transparent 50%);
     } @else {

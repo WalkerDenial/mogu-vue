@@ -1,3 +1,3 @@
-import BoxSkin from './box-skin';
+import BoxSkin from "./box-skin";
 
 export default BoxSkin;

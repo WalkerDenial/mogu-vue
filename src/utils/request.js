@@ -1,20 +1,14 @@
 import axios from "axios";
 
-const service = axios.create({
+const service = axios.create({});
 
+service.interceptors.request.use((config) => {
+  return config;
 });
 
-service.interceptors.request.use(
-    config => {
-        return config;
-    }
-);
-
-service.interceptors.response.use(
-    response => {
-        const {data} = response;
-        return data;
-    }
-);
+service.interceptors.response.use((response) => {
+  const { data } = response;
+  return data;
+});
 
 export default service;

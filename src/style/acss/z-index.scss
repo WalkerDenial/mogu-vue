@@ -12,7 +12,7 @@
 }
 -------------------------- */
 @each $style in (normal $index-normal, top $index-top, popper $index-popper) {
-    [z-#{nth($style, 1)}] {
-        z-index: #{nth($style, 2)};
-    }
+  [z-#{nth($style, 1)}] {
+    z-index: #{nth($style, 2)};
+  }
 }

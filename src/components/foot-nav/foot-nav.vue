@@ -1,18 +1,13 @@
 <template>
-  <c-box-skin
-    class="c-foot-nav"
-    type="top">
+  <c-box-skin class="c-foot-nav" type="top">
     <c-row style="height: 100%">
-      <c-col
-        v-for="item in list"
-        :span="24/list['length']"
-        :key="item">
-        <router-link
-          :to="item['path']">
-          <c-box-center 
+      <c-col v-for="item in list" :span="24 / list['length']" :key="item">
+        <router-link :to="item['path']">
+          <c-box-center
             class="c-foot-nav__text"
-            :class="{'c-foot-nav__text--active':item['active']}">
-            {{ item['text'] }}
+            :class="{ 'c-foot-nav__text--active': item['active'] }"
+          >
+            {{ item["text"] }}
           </c-box-center>
         </router-link>
       </c-col>
@@ -21,24 +16,23 @@
 </template>
 <script>
 export default {
-  name: 'CFootNav',
+  name: "CFootNav",
   props: {
     list: {
       type: Object,
-      default: function() {
+      default: function () {
         return [];
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 @include b(c-foot-nav) {
   @include e(text) {
     color: $color-text-primary;
     @include m(active) {
-        color: $color-text-quaternary;
-      
+      color: $color-text-quaternary;
     }
   }
 }
