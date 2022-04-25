@@ -6,6 +6,11 @@ const routes = [
     name: "MallHome",
     component: () => import('../views/mall/home.vue'),
   },
+  {
+    path: "/mall/shop",
+    name: "MallShop",
+    component: () => import('../views/mall/shop.vue'),
+  },
 ];
 
 const router = createRouter({

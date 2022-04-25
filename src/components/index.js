@@ -8,6 +8,7 @@ import SingleCenter from "./single-center";
 import BoxSkin from "./box-skin";
 import Launch from "./launch";
 import FootNav from "./foot-nav";
+import Magazine from "./magazine";
 
 const components = {
   Layout,
@@ -22,6 +23,7 @@ const components = {
   BoxSkin,
   Launch,
   FootNav,
+  Magazine,
 };
 
 const install = (app) => {
