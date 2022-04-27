@@ -8,5 +8,6 @@ import Mui from "@/components";
 import "@/mock";
 import "lib-flexible/flexible.js";
 import "@icon-park/vue/styles/index.css"
+import "../static/index.css"
 
 createApp(App).use(store).use(router).use(Mui).mount("#app");
