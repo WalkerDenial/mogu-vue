@@ -16,6 +16,16 @@ const routes = [
     name: "PromotionFastBuy",
     component: () => import('../views/promotion/fast-buy.vue'),
   },
+  {
+    path: "/promotion/sellout",
+    name: "PromotionSellout",
+    component: () => import('../views/promotion/sellout.vue'),
+  },
+  {
+    path: "/promotion/mine",
+    name: "PromotionMine",
+    component: () => import('../views/promotion/mine.vue'),
+  },
 ];
 
 const router = createRouter({

@@ -1,0 +1,60 @@
+<template>
+  <c-layout>
+    <c-main>
+      <c-goods :list="promotionGoods"></c-goods>
+    </c-main>
+    <c-footer>
+      <c-foot-nav class="footer" :list="footerList" fz13></c-foot-nav>
+    </c-footer>
+  </c-layout>
+</template>
+<script>
+import { getPromotionGoods } from "@/api/promotion";
+import { onMounted, reactive, toRefs } from "vue";
+import CGoods from "./goods";
+
+export default {
+  components: {
+    CGoods,
+  },
+  setup() {
+    const data = reactive({
+      promotionGoods: [],
+    });
+
+    onMounted(() => {
+      getPromotionGoods('').then((res) => {
+        data.promotionGoods = res.data;
+      });
+    });
+
+    const footerList = [
+      {
+        path: "/promotion/fast-buy",
+        text: "限时快抢",
+      },
+      {
+        path: "/promotion/sellout",
+        text: "即将售罄",
+      },
+      {
+        path: "/promotion/mine",
+        text: "我的快抢",
+        active: true,
+      },
+    ];
+
+    return {
+      ...toRefs(data),
+      footerList,
+    };
+  },
+};
+</script>
+<style lang="scss" scoped>
+@include b(footer) {
+  & ::v-deep .c-foot-nav__text {
+    height: 50px;
+  }
+}
+</style>
