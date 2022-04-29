@@ -7,7 +7,7 @@ const routes = [
     component: () => import('../views/mall/home.vue'),
   },
   {
-    path: "/mall/shop",
+    path: "/mall/store",
     name: "MallShop",
     component: () => import('../views/mall/shop.vue'),
   },
@@ -25,6 +25,11 @@ const routes = [
     path: "/promotion/mine",
     name: "PromotionMine",
     component: () => import('../views/promotion/mine.vue'),
+  },
+  {
+    path: "/live/home",
+    name: "LiveList",
+    component: () => import('../views/live/list.vue'),
   },
 ];
 

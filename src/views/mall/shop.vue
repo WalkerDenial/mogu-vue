@@ -36,14 +36,16 @@
       <c-box-skin>
         <c-row gutter="10" ph6 pv9>
           <c-col v-for="(item, index) in promotionList" :key="index" span="6">
-            <c-magazine
-              class="promotion"
-              :image="item['image']"
-              radius4
-              font-tertiary
-            >
-              <div class="promotion__span" fz14>{{ item["title"] }}</div>
-            </c-magazine>
+            <router-link to="/promotion/fast-buy" :v-if="index === 0">
+              <c-magazine
+                class="promotion"
+                :image="item['image']"
+                radius4
+                font-tertiary
+              >
+                <div class="promotion__span" fz14>{{ item["title"] }}</div>
+              </c-magazine>
+            </router-link>
           </c-col>
         </c-row>
         <c-row class="nav" pb6>
@@ -160,20 +162,20 @@ export default {
 
     const list = [
       {
-        path: "/",
+        path: "/mall/home",
         text: "首页",
       },
       {
-        path: "/",
+        path: "/mall/store",
         text: "商城",
         active: true,
       },
       {
-        path: "/",
+        path: "/live/home",
         text: "直播",
       },
       {
-        path: "/",
+        path: "/me/me",
         text: "我",
       },
     ];

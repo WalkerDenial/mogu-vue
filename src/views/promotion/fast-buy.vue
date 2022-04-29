@@ -1,6 +1,6 @@
 <template>
   <c-layout>
-    <c-main>
+    <c-main class="container">
       <div class="header" pa12>
         <c-magazine
           image="https://s10.mogucdn.com/mlcdn/c45406/201015_45l80j09ebiaki64i8d5309j1hg83_702x426.png"
@@ -71,7 +71,7 @@
         }}</c-box-center>
         <span p9>——</span>
       </c-box-center>
-      <c-goods :list="fastBuyGoods"></c-goods>
+      <c-goods :list="fastBuyGoods" class="goods"></c-goods>
     </c-main>
     <c-footer>
       <c-foot-nav class="footer" :list="footerList" fz13></c-foot-nav>
@@ -282,6 +282,9 @@ export default {
   @include e(time) {
     @include dimensions(20px);
   }
+}
+@include b(goods-container) {
+  padding-bottom: 50px;
 }
 @include b(footer) {
   & ::v-deep .c-foot-nav__text {

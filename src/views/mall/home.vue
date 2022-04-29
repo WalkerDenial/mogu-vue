@@ -153,20 +153,20 @@ export default {
 
     const list = [
       {
-        path: "/",
+        path: "/mall/home",
         text: "首页",
         active: true,
       },
       {
-        path: "/",
+        path: "/mall/store",
         text: "商城",
       },
       {
-        path: "/",
+        path: "/live/home",
         text: "直播",
       },
       {
-        path: "/",
+        path: "/me/me",
         text: "我",
       },
     ];

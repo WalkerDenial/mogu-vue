@@ -1,6 +1,6 @@
 <template>
   <c-layout>
-    <c-main>
+    <c-main  class="container">
       <c-goods :list="promotionGoods"></c-goods>
     </c-main>
     <c-footer>
@@ -52,6 +52,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@include b(container) {
+  padding-bottom: 50px;
+}
 @include b(footer) {
   & ::v-deep .c-foot-nav__text {
     height: 50px;
