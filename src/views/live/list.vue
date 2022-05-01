@@ -4,26 +4,49 @@
       <c-launch></c-launch>
     </c-header>
     <c-main class="content">
-      <c-box-skin class="live" v-for="(item, index) in liveList" :key="index" ph12>
-        <c-magazine class="live__container" :image="item['background']">
-          <c-single-center class="live__header" pv18>
-            <img class="live__img" :src="item['avatar']" alt="" mr8 circle>
-            <span>{{item['name']}}</span>
-          </c-single-center>
-          <div class="live__status" pa4 bga2 radius4 font-tertiary>
-            直播中 | {{ item['watchNum'] }}
-          </div>
-          <span class="live__title" font-tertiary fz16>{{ item['liveTitle'] }}</span>
-          <c-single-center class="chat">
-            <img class="chat__img" src="https://s5.mogucdn.com/mlcdn/c45406/201015_49kl85i184k4gg6cf247eeg0ijl33_400x400.jpg_100x100.jpg" alt="" mr8 circle>
-            <span font-tertiary>小仙子</span>
-          </c-single-center>
-          <c-single-center>
-            <c-magazine class="product" v-for="(goodsItem, index) in item['goods']" :key="index" :image="goodsItem['image']" mr10>
-              <div class="product__des" font-tertiary>{{ goodsItem['price'] }}</div>
-            </c-magazine>
-          </c-single-center>
-        </c-magazine>
+      <c-box-skin
+        class="live"
+        v-for="(item, index) in liveList"
+        :key="index"
+        ph12
+      >
+        <router-link to="/live/detail">
+          <c-magazine class="live__container" :image="item['background']">
+            <c-single-center class="live__header" pv18>
+              <img class="live__img" :src="item['avatar']" alt="" mr8 circle />
+              <span>{{ item["name"] }}</span>
+            </c-single-center>
+            <div class="live__status" pa4 bga2 radius4 font-tertiary>
+              直播中 | {{ item["watchNum"] }}
+            </div>
+            <span class="live__title" font-tertiary fz16>{{
+              item["liveTitle"]
+            }}</span>
+            <c-single-center class="chat">
+              <img
+                class="chat__img"
+                src="https://s5.mogucdn.com/mlcdn/c45406/201015_49kl85i184k4gg6cf247eeg0ijl33_400x400.jpg_100x100.jpg"
+                alt=""
+                mr8
+                circle
+              />
+              <span font-tertiary>小仙子</span>
+            </c-single-center>
+            <c-single-center>
+              <c-magazine
+                class="product"
+                v-for="(goodsItem, index) in item['goods']"
+                :key="index"
+                :image="goodsItem['image']"
+                mr10
+              >
+                <div class="product__des" font-tertiary>
+                  {{ goodsItem["price"] }}
+                </div>
+              </c-magazine>
+            </c-single-center>
+          </c-magazine>
+        </router-link>
       </c-box-skin>
     </c-main>
     <c-footer>
@@ -82,14 +105,14 @@ export default {
   @include e(container) {
     position: relative;
     height: 200px;
-    border-radius: 4Px 4Px 0 0/4Px 4Px 0 0;
+    border-radius: 4px 4px 0 0/4px 4px 0 0;
   }
   @include e(header) {
     @include position(absolute, top -50px left 12px);
   }
   @include e(img) {
     @include dimensions(45px);
-    border: 2Px solid #fff;
+    border: 2px solid #fff;
   }
   @include e(status) {
     @include position(absolute, top 70px left 12px);
