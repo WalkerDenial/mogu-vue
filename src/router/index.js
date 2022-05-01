@@ -37,6 +37,11 @@ const routes = [
     component: () => import('../views/live/detail.vue'),
   },
   {
+    path: "/me/me",
+    name: "Me",
+    component: () => import('../views/me/me.vue'),
+  },
+  {
     path: "/",
     redirect: "/mall/home",
   }
