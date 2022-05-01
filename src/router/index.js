@@ -31,6 +31,10 @@ const routes = [
     name: "LiveList",
     component: () => import('../views/live/list.vue'),
   },
+  {
+    path: "/",
+    redirect: "/mall/home",
+  }
 ];
 
 const router = createRouter({

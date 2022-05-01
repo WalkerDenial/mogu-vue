@@ -14,6 +14,15 @@
             直播中 | {{ item['watchNum'] }}
           </div>
           <span class="live__title" font-tertiary fz16>{{ item['liveTitle'] }}</span>
+          <c-single-center class="chat">
+            <img class="chat__img" src="https://s5.mogucdn.com/mlcdn/c45406/201015_49kl85i184k4gg6cf247eeg0ijl33_400x400.jpg_100x100.jpg" alt="" mr8 circle>
+            <span font-tertiary>小仙子</span>
+          </c-single-center>
+          <c-single-center>
+            <c-magazine class="product" v-for="(goodsItem, index) in item['goods']" :key="index" :image="goodsItem['image']" mr10>
+              <div class="product__des" font-tertiary>{{ goodsItem['price'] }}</div>
+            </c-magazine>
+          </c-single-center>
         </c-magazine>
       </c-box-skin>
     </c-main>
@@ -87,6 +96,20 @@ export default {
   }
   @include e(title) {
     @include position(absolute, top 100px left 12px);
+  }
+}
+@include b(chat) {
+  @include position(absolute, bottom 10px right 10px);
+  @include dimensions(120px, 60px);
+  @include e(img) {
+    @include dimensions(14px);
+  }
+}
+@include b(product) {
+  @include position(absolute, top 130px left 12px);
+  @include dimensions(60px);
+  @include e(des) {
+    padding-top: 42px;
   }
 }
 @include b(footer) {
