@@ -42,6 +42,16 @@ const routes = [
     component: () => import('../views/me/me.vue'),
   },
   {
+    path: "/animation/animation",
+    name: "Animation",
+    component: () => import('../views/animation/animation.vue'),
+  },
+  {
+    path: "/animation/index",
+    name: "AnimationIndex",
+    component: () => import('../views/animation/index.vue'),
+  },
+  {
     path: "/",
     redirect: "/mall/home",
   }
