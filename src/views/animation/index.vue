@@ -1,11 +1,212 @@
 <template>
     <div class="animation">
-
+        <div class="bottom">
+            <img src="../../assets/sky.png" alt="" class="bottom__sky">
+            <img src="../../assets/grass.png" alt="" class="bottom__grass">
+        </div>
+        <div class="top">
+            <img src="../../assets/father.png" alt="" class="top__father">
+            <p class="top__p1">父亲您辛苦了节日快乐</p>
+            <p class="top__p2">父爱如山且伟大</p>
+            <p class="top__p3">蘑菇街为父亲准备了好礼物</p>
+            <img src="../../assets/people.png" alt="" class="top__people">
+        </div>
+        <div class="snow snow--pos1" circle></div>
+        <div class="snow snow--pos2" circle></div>
+        <div class="snow snow--pos3" circle></div>
+        <div class="snow snow--pos4" circle></div>
+        <div class="snow snow--pos5" circle></div>
     </div>
 </template>
 <style lang="scss" scoped>
 @include b(animation) {
     height: 100vh;
     background: rgb(149, 217, 215);
+}
+@include b(bottom) {
+    @include position(absolute, top 0 left 0 right 0 bottom 0);
+    @include e(sky) {
+        @include position(absolute, top 0 left 0);
+        animation: puffln 1.2s ease 0.3s 1 both;
+    }
+    @include e(grass) {
+        @include position(absolute, bottom -180px left -50px);
+        width: 475px;
+        animation: fadeInUp 1.2s ease 0.3s 1 both;
+    }
+}
+@include b(top) {
+  @include position(absolute, top 0 left 0 right 0 bottom 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include e(father) {
+    width: 330px;
+    margin-top: 80px;
+    animation: rotate 1.2s ease 0.3s 1 both;
+  }
+
+  p {
+    margin-top: 6px;
+    color: #339999;
+    font-size: 14px;
+  }
+
+  @include e(people) {
+    width: 364px;
+    margin-top: 26px;
+    transform: rotateZ(0deg);
+    animation: tempKeyframesForMotion0 8s linear 1.5s infinite both;
+  }
+
+  @include e(p1) {
+    margin-top: 20px !important;
+    font-weight: 700;
+    animation: fadeInDown 1.2s ease 0.3s 1 both;
+  }
+
+  @include e(p2) {
+    animation: fadeInUp 1.2s ease 0.3s 1 both;
+  }
+
+  @include e(p3) {
+    animation: fadeInLeft 1.2s ease 0.3s 1 both;
+  }
+}
+@include b(snow) {
+  @include dimensions(10px);
+  background: rgba(255, 255, 255, .4);
+  border: 1px solid #eee;
+
+  @include m(pos1) {
+    @include position(absolute, top -20px left 10px);
+    animation: snowflake 2.8s linear 1.5s infinite both;
+  }
+
+  @include m(pos2) {
+    @include position(absolute, top -20px left 100px);
+    animation: snowflake 3.2s linear 1.8s infinite both;
+  }
+
+  @include m(pos3) {
+    @include position(absolute, top -20px left 190px);
+    animation: snowflake 2.5s linear 2s infinite both;
+  }
+
+  @include m(pos4) {
+    @include position(absolute, top -20px left 260px);
+    animation: snowflake 3s linear 1.5s infinite both;
+  }
+
+  @include m(pos5) {
+    @include position(absolute, top -20px left 320px);
+    animation: snowflake 2.2s linear 1.8s infinite both;
+  }
+}
+
+@keyframes puffln {
+    0% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 200px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes rotate{
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotateY(-20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotateY(10deg);
+    opacity: 1;
+  }
+  
+  80% {
+    transform: perspective(400px) rotateY(-5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+  }
+}
+@keyframes fadeInDown{
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-200px,0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp{
+  0% {
+    opacity: 0;
+    transform: translate3d(0,200px,0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft{
+  0% {
+    opacity: 0;
+    transform: translate3d(-200px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tempKeyframesForMotion0{
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  22% {
+    transform: translate(133px, -1px);
+  }
+
+  72% {
+    transform: translate(-158px, 0px);
+  }
+
+  100% {
+    transform: translate(1px, 0px);
+  }
+}
+
+@keyframes snowflake{
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(0, 100vh);
+  }
 }
 </style>
